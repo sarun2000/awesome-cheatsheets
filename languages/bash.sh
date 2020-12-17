@@ -32,6 +32,12 @@ ALT+B   # moves backward one word
 ALT+D   # deletes next word
 ALT+F   # moves forward one word
 ALT+H   # deletes one character backward
+ALT+T   # transposes two words
+ALT+.   # pastes last word from the last command. Pressing it repeatedly traverses through command history.
+ALT+U   # capitalizes every character from the current cursor position to the end of the word
+ALT+L   # uncapitalizes every character from the current cursor position to the end of the word
+ALT+C   # capitalizes the letter under the cursor. The cursor then moves to the end of the word.
+ALT+R   # reverts any changes to a command you’ve pulled from your history if you’ve edited it.
 
 BACKSPACE  # deletes one character backward
 DELETE     # deletes one character under cursor
@@ -95,6 +101,8 @@ genscript                     # converts plain text files into postscript for pr
 dvips <filename>              # prints .dvi files (i.e. files produced by LaTeX)
 grep <pattern> <filenames>    # looks for the string in the files
 grep -r <pattern> <dir>       # search recursively for pattern in directory
+head -n file_name | tail +n   # Print nth line from file.
+head -y lines.txt | tail +x   # want to display all the lines from x to y. This includes the xth and yth lines.
 
 
 ##############################################################################
@@ -111,7 +119,7 @@ cd ..                         # changes to the parent directory
 cd <dirname>                  # changes directory
 cp -r <dir1> <dir2>           # copy <dir1> into <dir2> including sub-directories
 pwd                           # tells you where you currently are
-
+cd ~                          # changes to home.
 
 ##############################################################################
 # SSH, SYSTEM INFO & NETWORK COMMANDS
@@ -139,6 +147,7 @@ ps -u yourusername       # lists your processes
 kill <PID>               # kills the processes with the ID you gave
 killall <processname>    # kill all processes with the name
 top                      # displays your currently active processes
+lsof                     # lists open files
 bg                       # lists stopped or background jobs ; resume a stopped job in the background
 fg                       # brings the most recent job in the foreground
 fg <job>                 # brings job to the foreground
@@ -508,6 +517,6 @@ On_Cyan='\033[46m'  # Cyan
 On_White='\033[47m' # White
 
 # Example of usage
-echo -e "${Green}This is GREEN text${Color_Off} and nornal text"
+echo -e "${Green}This is GREEN text${Color_Off} and normal text"
 echo -e "${Red}${On_White}This is Red test on White background${Color_Off}" 
 # option -e is mandatory, it enable interpretation of backslash escapes
