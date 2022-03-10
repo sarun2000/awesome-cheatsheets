@@ -4,9 +4,9 @@
 //Text file name HelloWorld.java
 public class HelloWorld {
   // main() is the method
-  public static void main (String[] arfs)
+  public static void main (String[] args)
     //Prints "Hello World" in the terminal window.
-    System.out.pritn("Hello World");
+    System.out.println("Hello World");
 }
 ```
 
@@ -84,8 +84,8 @@ int c = a + b;
     double cos(double theta) //cosine of theta
     double tan(double theta) //tangent of theta
     double toRadians(double degrees) // convert angle from degrees to radians
-    double toDegreestouble radians)  // convert angle from radians to degrees
-    double exp(doube a)  // exponential (e^a)
+    double toDegrees(double radians)  // convert angle from radians to degrees
+    double exp(double a)  // exponential (e^a)
     double pow(double a, double p) //raise a to the bth power (a^b)
     double random() //random in [0,1)
     double sqrt(double a)  //square root of a
@@ -196,6 +196,24 @@ int c = a + b;
      System.out.println(i);
   }
 ```
+
+>Enhanced for loop/for-each 
+```java
+for(dataType item : array) {
+    ...
+}
+
+```
+**Example:**
+```java
+    // array of numbers
+    int[] numbers = {100, 200, 300, 400};
+    
+    // for each loop 
+    for (int number: numbers) {
+      System.out.println(number);
+```
+
 > WHILE LOOP STATEMENT
 ```java
     while(condition){  //till condition will be true.
@@ -560,8 +578,8 @@ class MyClass extends MySuperClass implements YourInterface {
 ```java
   public class Queue<Item> implements Iterable<Item>
 
-  Queue()  //create an emptyh queue
-  boolean isEmpthy()  //return if the queue empthy
+  Queue()  //create an empty queue
+  boolean isEmpty()  //return if the queue empty
   void enqueue(Item item) // insert an item onto queue
   Item dequeue()  //return and remove the item that was inserted least recently
   int size() //number of item on queue
@@ -573,7 +591,7 @@ class MyClass extends MySuperClass implements YourInterface {
 //import Iterator
 import java.util.Iterator;
 
-public class Queue<Item> implements Iterable <Item> { 
+public class Queue<Item> implements Iterable<Item> { 
 
 //FIFO queue
   private Node first;
@@ -609,9 +627,9 @@ public class Queue<Item> implements Iterable <Item> {
 * **SET DATA TYPE**
 
 ```java
-  public class SET<Key extends Comparable<Key>> implements Iterable<Key>
-  SET() //create an empthy set
-  boolean isEmpthy()  //return if the set is empthy
+  public class Set<Key extends Comparable<Key>> implements Iterable<Key>
+  Set() //create an empty set
+  boolean isEmpty()  //return if the set is empty
   void add (Key key)  //add key to the set
   void remove(Key key)  //remove key from set
   boolean contains(Key key) //return if the key is in the set

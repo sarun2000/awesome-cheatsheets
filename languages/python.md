@@ -12,9 +12,9 @@
 
 * We can run a python file by the following command in cmd(Windows) or shell(mac/linux).
 
-    `python <filename.py>`
+    `$ python <filename.py>` or `$ python3 <filename.py>`
 
-#### By default, the python doesn't require any imports to run a python file.
+#### By default, python doesn't require any imports to run a python file.
 
 ## Create and execute a program
 
@@ -34,7 +34,6 @@
 | char | Characters [a, b, @, !, `] |
 | str | Strings [abc, AbC, A@B, sd!, `asa] |
 | bool | Boolean Values [True, False] |
-| char | Characters [a, b, @, !, `] |
 | complex | Complex numbers [2+3j, 4-1j] |
 
 <br>
@@ -42,24 +41,45 @@
 ## Keywords
 <br>
 
-| Keyword | Description |
-| --------- | ----------- |
-| break 	| used to exit loop and used to exit|
-| char	  |   basic declaration of a type character |
-| const	  |   prefix declaration meaning variable can not be changed|
-| continue |	go to bottom of loop in for, while loops|
-| class |	to define a class|
-| def |	to define a function|
-| elif |	shortcut for (else if) used in else if ladder |
-| else	  |  executable statement, part of "if" structure |
-| float	  |  basic declaration of floating point|
-| for	  |    executable statement, for loop|
-| from	  |    executable statement, used to import only specific objects from a package|
-| if	  |    executable statement|
-| import |	to import modules|
-|pass| keyword to specify noting is happening in the codeblock, generally used in classes|
-|return	 | executable statement with or without a value|
-|while| executable statement, while loop|
+- As of python3.8 there are 35 keywords
+
+| Keyword | Description  | Category |
+|---------- | ---------- | --------- | 
+| True      | Boolean value for not False or 1 | Value Keyword|
+| False     | Boolean Value for not True or 0 | Value Keyword |
+| None      | No Value | Value keyword |
+| and       | returns true if both (oprand) are true (other language && ) | Operator keyword |
+| or        | returns true of either operands is true (other language || ) | Operator keyword |
+| in        | returns true if word is in iterator | Operator keyword |
+| is        | returns true if id of variables are same | Operator keyword |
+| not       | returns opposite Boolean value | Operator Keyword |
+| if | get into block if expression is true | conditional |
+| elif | for more than 1 if checks | conditional |
+| else | this block will be executed if condition is false | conditional |
+| for | used for looping | iteration |
+| while | used for looping | iteration |
+| break | get out of loop | iteration | 
+| continue | skip for specific condition | iteration |
+| def | make user defined function | structure |
+| class | make user defined classes | structure |
+| lambda | make anonymous function | structure |
+| with | execute code within context manager's scope | structure |
+| as | alias for something | structure |
+| pass | used for making empty structures(declaration) | structure |
+| return | get value(s) from function, get out of function | returning keyword |
+| yield | yields values instead of returning (are called generators) | returning keyword |
+| import | import libraries/modules/packages | import |
+| from | import specific function/classes from modules/packages | import |
+| try | this block will be tried to get executed | exception handling |
+| except | is any exception/error has occured it'll be executed | exception handling |
+| finally | It'll be executed no matter exception occurs or not | exception handling | 
+| raise | throws any specific error/exception | exception handling |
+| assert | throws an AssertionError if condition is false | exception handling |
+| async | used to define asynchronous functions/co-routines | asynchronous programming |
+| await | used to specify a point when control is taken back | asynchronous programming |
+| del | deletes/unsets any user defined data |  variable handling |
+| global | used to access variables defined outside of function | variable handling |
+| nonlocal | modify variables from different scopes | variable handling |
 <br>
 
 ## Operators
@@ -79,8 +99,8 @@
 |  %    |	modulo, a % b |
 |  \+   | 	add, a + b |
 | \-   | 	subtract, a - b |
-| <<   | shift left,  left operand is shifted left by right operand bits |
-| \>>   |	shift right, left operand is shifted right by right operand bits|
+| <<   | shift left,  left operand is shifted left by right operand bits (multiply by 2) |
+| \>>   |	shift right, left operand is shifted right by right operand bits (divide by 2) |
  | <    |	less than, result is true or false,  a %lt; b
 | <=   |	less than or equal, result is true or false,  a <= b
 | \>    |	greater than, result is true or false,  a > b
@@ -114,7 +134,7 @@
 
 - Lists are created using square brackets:
 
-```py
+```python
 thislist = ["apple", "banana", "cherry"] 
 ```
 
@@ -127,18 +147,31 @@ thislist = ["apple", "banana", "cherry"]
 - To determine how many items a list has, use the `len()` function.
 
 - A list can contain different data types:
-```py
+```python
 list1 = ["abc", 34, True, 40, "male"]
 ```
 - It is also possible to use the list() constructor when creating a new list
-```py
+```python
 thislist = list(("apple", "banana", "cherry"))  # note the double round-brackets
 ```
+- pop() function removes the last value in the given list by default.
+
+  ```python
+  thislist = ["apple", "banana", "cherry"] 
+  
+  print(thislist.pop())  # cherry
+  print(thislist.pop(0))  #apple 
+  
+  ```
+
+  
+
 ### Tuple
+
 - Tuple is a collection which is ordered and unchangeable. Allows duplicate members.
 - A tuple is a collection which is ordered and unchangeable.
 - Tuples are written with round brackets.
-```py
+```python
 thistuple = ("apple", "banana", "cherry")
 ```
 - Tuple items are ordered, unchangeable, and allow duplicate values.
@@ -148,25 +181,25 @@ thistuple = ("apple", "banana", "cherry")
 - Tuples are unchangeable, meaning that we cannot change, add or remove items after the tuple has been created.
 - Since tuple are indexed, tuples can have items with the same value:
 - Tuples allow duplicate values:
-```py
+```python
 thistuple = ("apple", "banana", "cherry", "apple", "cherry")
 ```
 - To determine how many items a tuple has, use the  `len()`function:
-```py
+```python
 thistuple = ("apple", "banana", "cherry")
 print(len(thistuple))
 ```
 - To create a tuple with only one item, you have to add a comma after the item, otherwise Python will not recognize it as a tuple.
-```py
+```python
 thistuple = ("apple",)
 print(type(thistuple))
 
-#NOT a tuple
+# NOT a tuple
 thistuple = ("apple")
 print(type(thistuple))
 ```
 - It is also possible to use the tuple() constructor to make a tuple.
-```py
+```python
 
 thistuple = tuple(("apple", "banana", "cherry")) # note the double round-brackets
 print(thistuple)
@@ -175,7 +208,7 @@ print(thistuple)
 ### Set
 - Set is a collection which is unordered and unindexed. No duplicate members.
 - A set is a collection which is both unordered and unindexed.
-```py
+```python
 thisset = {"apple", "banana", "cherry"}
 ```
 - Set items are unordered, unchangeable, and do not allow duplicate values.
@@ -186,27 +219,38 @@ thisset = {"apple", "banana", "cherry"}
 - Sets are unchangeable, meaning that we cannot change the items after the set has been created.
 - Duplicate values will be ignored.
 - To determine how many items a set has, use the `len()` method.
-```py
+```python
 thisset = {"apple", "banana", "cherry"}
 
 print(len(thisset))
 ```
 - Set items can be of any data type:
-```py
+```python
 set1 = {"apple", "banana", "cherry"}
 set2 = {1, 5, 7, 9, 3}
 set3 = {True, False, False}
 set4 = {"abc", 34, True, 40, "male"}
 ```
 - It is also possible to use the `set()` constructor to make a set.
-```py
+```python
 thisset = set(("apple", "banana", "cherry")) # note the double round-brackets
 ```
+- frozenset()  is just an immutable version of Set. While elements of a set can be modified at any time, elements of the frozen set remain the same after creation.
+
+```python
+set1 = {"apple", "banana", "cherry"}
+frzset=frozenset(set1)
+print(frzset)
+```
+
+
+
 ### Dictionary
+
 - Dictionary is a collection which is unordered and changeable. No duplicate members.
 - Dictionaries are used to store data values in key:value pairs.
 - Dictionaries are written with curly brackets, and have keys and values:
-```py
+```python
 thisdict = {
   "brand": "Ford",
   "model": "Mustang",
@@ -214,7 +258,7 @@ thisdict = {
 }
 ```
 - Dictionary items are presented in key:value pairs, and can be referred to by using the key name.
-```py
+```python
 thisdict = {
   "brand": "Ford",
   "model": "Mustang",
@@ -226,11 +270,11 @@ print(thisdict["brand"])
 - Dictionaries cannot have two items with the same key.
 - Duplicate values will overwrite existing values.
 - To determine how many items a dictionary has, use the `len()` function.
-```py
+```python
 print(len(thisdict))
 ```
 - The values in dictionary items can be of any data type
-```py
+```python
 thisdict = {
   "brand": "Ford",
   "electric": False,
@@ -239,9 +283,26 @@ thisdict = {
 }
 ```
 
+- pop() Function is used to remove a specific value from a dictionary. You can only use key bot the value. Unlike Lists you have to give a value to this function
+
+  ```python
+   car = {
+    "brand": "Ford",
+    "model": "Mustang",
+    "year": 1964
+  }
+  
+  x = car.pop("model")
+  
+  print(x)# Mustang
+  print(car)#{'brand': 'Ford', 'year': 1964}
+  ```
+
+  
+
 ### Conditional branching
 
-```py
+```python
     if condition:
         pass
     elif condition2:
@@ -258,7 +319,7 @@ thisdict = {
 #### While loop
 - With the `while` loop we can execute a set of statements as long as a condition is true.
 - Example: Print i as long as i is less than 6
-```py
+```python
 i = 1
 while i < 6:
   print(i)
@@ -276,7 +337,7 @@ while i < 6:
 - This is less like the for keyword in other programming languages, and works more like an iterator method as found in other object-orientated programming languages.
 
 - With the for loop we can execute a set of statements, once for each item in a list, tuple, set etc.
-```py
+```python
 fruits = ["apple", "banana", "cherry"]
 for x in fruits:
   print(x)
@@ -290,7 +351,7 @@ A nested loop is a loop inside a loop.
 
 - The "inner loop" will be executed one time for each iteration of the "outer loop":
 
-```py
+```python
 adj = ["red", "big", "tasty"]
 fruits = ["apple", "banana", "cherry"]
 
@@ -300,19 +361,19 @@ for x in adj:
 ```
 - for loops cannot be empty, but if you for some reason have a for loop with no content, put in the pass statement to avoid getting an error.
 
-```py
+```python
 for x in [0, 1, 2]:
   pass
 ```
 
 ### Function definition
-```py
+```python
 def function_name():
     return
 ```
 ### Function call
 
-```py 
+```python
 function_name()
 ```
 
